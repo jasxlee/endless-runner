@@ -77,13 +77,10 @@ public class PlayerController : MonoBehaviour
         case "Obstacle":
         death();
         break;
-
-        case "FixedObstacle":
-        death();
-        break;
         
         case "Reward":
         reward();
+        
         break;
           
       }
