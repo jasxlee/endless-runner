@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3125514977775252684}
   - component: {fileID: 3125514977775252683}
   - component: {fileID: 3125514977775252682}
-  - component: {fileID: 2719109940606459458}
+  - component: {fileID: 8948468022446958205}
   m_Layer: 0
   m_Name: Cube (7)
   m_TagString: Obstacle
@@ -266,6 +266,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -290,6 +291,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &3125514977775252683
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -312,19 +314,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &2719109940606459458
-MonoBehaviour:
+--- !u!65 &8948468022446958205
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3125514977775252681}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff88c1902c31122448341cedaddf4b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObstaclePrefab: {fileID: 3125514977775252681}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.5, y: 0.5, z: -0.5}
 --- !u!1 &3125514978071779950
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +340,7 @@ GameObject:
   - component: {fileID: 3125514978071779953}
   - component: {fileID: 3125514978071779952}
   - component: {fileID: 3125514978071779951}
-  - component: {fileID: 4295977705329361756}
+  - component: {fileID: 7077472700978211358}
   m_Layer: 0
   m_Name: Cube (9)
   m_TagString: Obstacle
@@ -591,6 +593,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -615,6 +618,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &3125514978071779952
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -637,19 +641,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &4295977705329361756
-MonoBehaviour:
+--- !u!65 &7077472700978211358
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3125514978071779950}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff88c1902c31122448341cedaddf4b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObstaclePrefab: {fileID: 3125514978071779950}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.5, y: 0.5, z: -0.5}
 --- !u!1 &3125514978499328187
 GameObject:
   m_ObjectHideFlags: 0
@@ -663,7 +667,7 @@ GameObject:
   - component: {fileID: 3125514978499328190}
   - component: {fileID: 3125514978499328189}
   - component: {fileID: 3125514978499328188}
-  - component: {fileID: 3390303543397710466}
+  - component: {fileID: 3193897039543063386}
   m_Layer: 0
   m_Name: Cube (8)
   m_TagString: Obstacle
@@ -916,6 +920,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -940,6 +945,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &3125514978499328189
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -962,19 +968,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &3390303543397710466
-MonoBehaviour:
+--- !u!65 &3193897039543063386
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3125514978499328187}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff88c1902c31122448341cedaddf4b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObstaclePrefab: {fileID: 3125514978499328187}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.5, y: 0.5, z: -0.5}
 --- !u!1 &3125514978843550247
 GameObject:
   m_ObjectHideFlags: 0
@@ -989,9 +995,10 @@ GameObject:
   - component: {fileID: 3125514978843550249}
   - component: {fileID: 3125514978843550248}
   - component: {fileID: 3125514978843550253}
+  - component: {fileID: 2031966092840200954}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: FixedObstacle
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1241,6 +1248,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1265,6 +1273,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &3125514978843550249
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1306,6 +1315,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &2031966092840200954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125514978843550247}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 10, z: 1}
+  m_Center: {x: 0.5, y: 5, z: -0.5}
 --- !u!1 &3125514979230638830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1320,9 +1342,10 @@ GameObject:
   - component: {fileID: 3125514979230638834}
   - component: {fileID: 3125514979230638833}
   - component: {fileID: 3125514979230638832}
+  - component: {fileID: 5012101076224254302}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: FixedObstacle
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1572,6 +1595,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1596,6 +1620,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &3125514979230638834
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1637,6 +1662,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &5012101076224254302
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125514979230638830}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 1, z: 1}
+  m_Center: {x: 1.5, y: 0.5, z: -0.5}
 --- !u!1 &3125514979323148472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1651,9 +1689,10 @@ GameObject:
   - component: {fileID: 3125514979323148475}
   - component: {fileID: 3125514979323148474}
   - component: {fileID: 3125514979323148473}
+  - component: {fileID: 4788885152654286055}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: FixedObstacle
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1903,6 +1942,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1927,6 +1967,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &3125514979323148475
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1968,6 +2009,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &4788885152654286055
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3125514979323148472}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 10, z: 1}
+  m_Center: {x: 0.5, y: 5, z: -0.5}
 --- !u!1 &3125514979709881666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1981,7 +2035,7 @@ GameObject:
   - component: {fileID: 3125514979709881669}
   - component: {fileID: 3125514979709881668}
   - component: {fileID: 3125514979709881667}
-  - component: {fileID: 8293853038265196923}
+  - component: {fileID: 1991253774916741564}
   m_Layer: 0
   m_Name: Cube (6)
   m_TagString: Obstacle
@@ -2234,6 +2288,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2258,6 +2313,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &3125514979709881668
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2280,19 +2336,19 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
---- !u!114 &8293853038265196923
-MonoBehaviour:
+--- !u!65 &1991253774916741564
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3125514979709881666}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff88c1902c31122448341cedaddf4b7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObstaclePrefab: {fileID: 3125514979709881666}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0.5, y: 0.5, z: -0.5}
 --- !u!1 &3125514979712032778
 GameObject:
   m_ObjectHideFlags: 0
@@ -2565,6 +2621,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2589,6 +2646,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &3125514979712032780
 MeshFilter:
   m_ObjectHideFlags: 0

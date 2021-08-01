@@ -18,7 +18,7 @@ public class score : MonoBehaviour
     public Highscore savedhighscore;
     public float highscore;
     public bool saved;
-    public bool checkings = false;
+    public bool checkings = true;
 
 
     // Start is called before the first frame update
@@ -38,7 +38,7 @@ public class score : MonoBehaviour
         else
         {
             highscore = savedhighscore.savedscore;
-            Debug.Log(savedhighscore.savedscore);
+            //Debug.Log(savedhighscore.savedscore);
         }
     }
 
@@ -49,23 +49,26 @@ public class score : MonoBehaviour
         {
             LevelUp();
         }
-        checkings = GetComponent<PlayerController>().rewarding;
-      
+        
+        checkings = GetComponent<MovePlayer>().rewarding;
            switch(checkings)
            {
                case true:
-               Score = Score + 6.8f;
+               Score = Score + 15.0f;
+               Debug.Log("SCORE ADDED");
                checkings = false;
+               GetComponent<MovePlayer>().rewarding = false ;
+               Debug.Log("Rewarding set to false")
                break;
               
-                case false:
-                Score = Score;
-                break;
+               case false:
+               checkings = false;
+               break;
 
            }
            
        
-        checking = GetComponent<PlayerController>().isdead ;
+        checking = GetComponent<MovePlayer>().isdead ;
         switch (checking)
         {
             case false:
@@ -107,7 +110,7 @@ public class score : MonoBehaviour
         }
             scoreToNextLevel *= 2;
             difficultyLevel++;
-            GetComponent<PlayerController>().SetSpeed(difficultyLevel);
+            GetComponent<MovePlayer>().SetSpeed(difficultyLevel);
          Debug.Log (difficultyLevel);
        
     }
