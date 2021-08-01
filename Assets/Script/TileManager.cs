@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class TileManager : MonoBehaviour
 {
-
-
-
     public GameObject[] tilePrefabs;
     private Transform playerTransform;
     private float spawnZ = -40.0f;

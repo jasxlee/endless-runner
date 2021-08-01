@@ -5,31 +5,46 @@ using UnityEngine;
 public class rockspawner : MonoBehaviour
 {
     public GameObject rockPrefab;
-    public float score;
-    public float shownscore;
     public int count;
     public GameObject[] rocks;
     public int i;
     public float tempPosition;
     public Transform playerPos;
+    public float gameScore;
+    public bool death;
+    public bool spawned;
 
     // Start is called before the first frame update
     void Start()
     {
         playerPos = GameObject.Find("Player").transform;
+
         rocks = new GameObject[15];
-        StartCoroutine(spawn());
+        spawned = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        gameScore = GameObject.Find("Player").GetComponent<score>().Score;
+        death = GameObject.Find("Player").GetComponent<score>().checking;
+        if (gameScore > 5 && spawned == false)
+        {
+            StartCoroutine(spawn());
+            spawned = true;
+        }
+
+        if (death)
+        {
+            StopCoroutine(spawn());
+            spawned = false;
+        }
     }
 
-   
- private IEnumerator spawn()
+
+    private IEnumerator spawn()
     {
-         while (true)
+        while (true)
         {
             for (i = 0; i < 10; i++)
             {
@@ -50,6 +65,6 @@ public class rockspawner : MonoBehaviour
                     yield return new WaitForSeconds(timeRandom);
                 }
             }
-        }       
+        }
     }
 }

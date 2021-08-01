@@ -6,8 +6,6 @@ using System.IO;
 
 public class score : MonoBehaviour
 {
-
-
     public float Score = 0.0f;
     private int difficultyLevel = 1;
     private int maxDifficultyLevel = 16;
@@ -16,7 +14,6 @@ public class score : MonoBehaviour
     public DeathMenu deathMenu;
     public bool checking = false;
     public Highscore savedhighscore;
-    public float highscore;
     public bool saved;
     public bool checkings = false;
 
@@ -24,21 +21,21 @@ public class score : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        savedhighscore = new Highscore();
+        //Load the Highscore data, else create if the file cannot be found
         saved = false;
-        string json = File.ReadAllText(Application.dataPath + "/safeFile.json");
-        savedhighscore = JsonUtility.FromJson<Highscore>(json);
 
-        if (savedhighscore == null)
+        if (File.Exists(Application.dataPath + "/safeFile.json"))
         {
-            highscore = 0;
-           // Debug.Log(savedhighscore);
-            savedhighscore = new Highscore();
+
+            string json = File.ReadAllText(Application.dataPath + "/safeFile.json");
+            savedhighscore = JsonUtility.FromJson<Highscore>(json);
+
         }
         else
         {
-            highscore = savedhighscore.savedscore;
-            Debug.Log(savedhighscore.savedscore);
+            //Create a size 5 array when the JSON file is absent
+            savedhighscore = new Highscore();
+            savedhighscore.initialise();
         }
     }
 
@@ -50,54 +47,50 @@ public class score : MonoBehaviour
             LevelUp();
         }
         checkings = GetComponent<PlayerController>().rewarding;
-      
-           switch(checkings)
-           {
-               case true:
-               Score = Score + 6.8f;
-               checkings = false;
-               break;
-              
-                case false:
+
+        switch (checkings)
+        {
+            case true:
+                Score = Score + 6.8f;
+                checkings = false;
+                break;
+
+            case false:
                 Score = Score;
                 break;
 
-           }
-           
-       
-        checking = GetComponent<PlayerController>().isdead ;
+        }
+
+
+        checking = GetComponent<PlayerController>().isdead;
         switch (checking)
         {
             case false:
-            Score += Time.deltaTime * difficultyLevel;
-            scoreText.text = ((int)Score).ToString();
-            break;
+                Score += Time.deltaTime * difficultyLevel;
+                scoreText.text = ((int)Score).ToString();
+                break;
 
             case true:
-            if (Score > highscore && saved == false)
-            {
-                saved = true;
-                savedhighscore.savedscore = Score;
-                string json = JsonUtility.ToJson(savedhighscore);
-                File.WriteAllText(Application.dataPath + "/safeFile.json", json);
-                Debug.Log(json);
-            }
-            deathMenu.ToggleEndMenu (Score);           
-            break;
+                deathMenu.ToggleEndMenu(Score);
+                if (saved == false)
+                {
+                    saveHighscoreList(Score);
+                }
+                break;
 
-            
+
         }
-       /* if (GetComponent<PlayerController>().isdead==false)
-        {
-            Score += Time.deltaTime * difficultyLevel;
-            scoreText.text = ((int)Score).ToString();
-            
-        }
-       if (GetComponent<PlayerController>().isdead== true)
-        {
-            deathMenu.ToggleEndMenu (Score);
-        }*/
-      
+        /* if (GetComponent<PlayerController>().isdead==false)
+         {
+             Score += Time.deltaTime * difficultyLevel;
+             scoreText.text = ((int)Score).ToString();
+
+         }
+        if (GetComponent<PlayerController>().isdead== true)
+         {
+             deathMenu.ToggleEndMenu (Score);
+         }*/
+
     }
     void LevelUp()
     {
@@ -105,15 +98,42 @@ public class score : MonoBehaviour
         {
             return;
         }
-            scoreToNextLevel *= 2;
-            difficultyLevel++;
-            GetComponent<PlayerController>().SetSpeed(difficultyLevel);
-         Debug.Log (difficultyLevel);
-       
+        scoreToNextLevel *= 2;
+        difficultyLevel++;
+        GetComponent<PlayerController>().SetSpeed(difficultyLevel);
+        Debug.Log(difficultyLevel);
+
     }
 
-    public class Highscore
+    void saveHighscoreList(float highscore)
     {
-        public float savedscore;
+        int lowestscore = -1;
+        float tempscore = -1;
+        saved = true;
+
+        //look for lowest value in array
+        for (int i = 0; i < 5; i++)
+        {
+            if (tempscore == -1)//assign first loop value to temp
+            {
+                tempscore = savedhighscore.highscorelist[i];
+                lowestscore = i;
+            }
+            else
+            {
+                if (tempscore > savedhighscore.highscorelist[i])//assign the lowest score to temp
+                {
+                    tempscore = savedhighscore.highscorelist[i];
+                    lowestscore = i;
+                }
+            }
+        }
+
+        if (highscore > tempscore)
+        {
+            savedhighscore.highscorelist[lowestscore] = highscore;
+            string json = JsonUtility.ToJson(savedhighscore);
+            File.WriteAllText(Application.dataPath + "/safeFile.json", json);
+        }
     }
 }
