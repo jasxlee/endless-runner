@@ -54,7 +54,7 @@ public class score : MonoBehaviour
                Debug.Log("SCORE ADDED");
                checkings = false;
                GetComponent<MovePlayer>().rewarding = false ;
-               Debug.Log("Rewarding set to false")
+                Debug.Log("Rewarding set to false");
                break;
               
                case false:

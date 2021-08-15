@@ -13,7 +13,7 @@ public class HighscoreTemplate : MonoBehaviour
     void Start()
     {
         highscoreContainer = transform.Find("HighscoreContainer");
-        highscoreTemplate = highscoreContainer.FindGameObjectByTag("HighscoreTemplate");      
+        highscoreTemplate = highscoreContainer.Find("HighscoreTemplate");      
         //if (File.Exists(Application.dataPath + "/safeFile.json"))
         //{
         //    string json = File.ReadAllText(Application.dataPath + "/safeFile.json");
